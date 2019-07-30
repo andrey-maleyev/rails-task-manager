@@ -1,14 +1,11 @@
-<div class="container">
-	<h1>My tasks</h1>
-	<ul style="list-style-type: none">
-	  <% @tasks.each do |task| %>
-	    <li>
-	      <input type="checkbox"
-	        <%= "checked" if task.completed %>
-	      />
-	      <%= task.title %>
-	    </li>
-	  <% end %>
-	</ul>
-</div>
-
+<h1>My tasks</h1>
+<ul style="list-style-type: none">
+  <% @tasks.each do |task| %>
+    <li>
+      <input type="checkbox"
+        <%= "checked" if task.completed %>
+      />
+      <%= link_to task.title, task_path(id: task.id) %>
+    </li>
+  <% end %>
+</ul>
